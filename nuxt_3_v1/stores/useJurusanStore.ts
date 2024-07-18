@@ -25,7 +25,8 @@ type jurusanResponse = {
 
 
 export const useJurusanStore = defineStore('jurusan', () => {
-    const jurusanUrl = "/api/v1/jurusan";
+    const config = useRuntimeConfig()
+    const jurusanUrl = config.public.apiUrl + "jurusan";
     const isCreated = ref<boolean>(false);
 
 
